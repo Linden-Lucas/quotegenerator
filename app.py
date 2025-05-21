@@ -35,7 +35,7 @@ randQuote = tempQuotes[randIndex]
 tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
 
-quiz = st.checkbox("Quiz mode")
+quiz = st.checkbox("Quizz mode")
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
