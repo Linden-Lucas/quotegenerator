@@ -82,7 +82,7 @@ if not quiz:
     button_pressed = columns[1].button("Get new quote")
 if quiz:
     correct = -1
-    columns = st.columns((2,1,1,1,2))
+    columns = st.columns((0,1,1,1,0))
     st.markdown("", unsafe_allow_html=True)
     tempTeachers = list(teachers)
     i = randint(0,len(tempTeachers)-1)
