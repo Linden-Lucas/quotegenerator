@@ -15,8 +15,7 @@ background-color: red;
 visibility: hidden;
 }}
 [class*="st-emotion-cache"]{{display: none;}}
-[class*="_container_"]:{{display: none;}}
-[class*="profileContainer"]:{{display: none;}}
+
 </style>
 """
 
