@@ -66,7 +66,7 @@ try:
     else:
         st.write("Incorrect!")
 except:
-    st.write("")
+    st.write("UYGSUYGUHGSIUGISUEGIHSRIGHSIUHGISHFGIUHSFGIHDSFIUGISUHGIUSHEGIUSHRGHSRGIHU")
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
