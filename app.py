@@ -82,7 +82,7 @@ if not quiz:
     button_pressed = columns[1].button("Get new quote")
 if quiz:
     correct = -1
-    columns = st.columns((1,1,1))
+    columns = st.columns((1,1,1,1,1))
     st.markdown("", unsafe_allow_html=True)
     tempTeachers = list(teachers)
     i = randint(0,len(tempTeachers)-1)
@@ -104,9 +104,9 @@ if quiz:
         case 2:
             teacher3 = randQuote[1]
             correct = 2
-    option1 = columns[0].button(teacher1,on_click=option1Varify,key=1)
-    option2 = columns[1].button(teacher2,on_click=option2Varify,key=2)
-    option3 = columns[2].button(teacher3,on_click=option3Varify,key=3)
+    option1 = columns[1].button(teacher1,on_click=option1Varify,key=1)
+    option2 = columns[2].button(teacher2,on_click=option2Varify,key=2)
+    option3 = columns[3].button(teacher3,on_click=option3Varify,key=3)
 st.markdown("----", unsafe_allow_html=True)
 try:
     if st.session_state.correct:
