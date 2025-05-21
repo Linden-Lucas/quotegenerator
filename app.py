@@ -40,7 +40,33 @@ randQuote = tempQuotes[randIndex]
 tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
 
-quiz = st.checkbox("Quizz mode")
+def option1Varify():
+    if correct == 0:
+        st.session_state.correct = True
+        return
+    st.session_state.correct = False
+
+def option2Varify():
+    if correct == 1:
+        st.session_state.correct = True
+        return
+    st.session_state.correct = False
+
+def option3Varify():
+    if correct == 2:
+        st.session_state.correct = True
+        return
+    st.session_state.correct = False
+
+topBar = st.columns(1,1)
+quiz = topBar[0].checkbox("Quizz mode")
+try:
+    if st.session_state.correct:
+        st.write("Correct!")
+    else:
+        st.write("Incorrect!")
+except:
+    st.write("")
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
@@ -49,10 +75,31 @@ if not quiz:
     columns = st.columns((2, 1, 2))
     button_pressed = columns[1].button("Get new quote")
 else:
+    correct = -1
     columns = st.columns((1,1,1,1,1))
     st.markdown("", unsafe_allow_html=True)
     tempTeachers = list(teachers)
-    #teacher1 = 
-    #option1 = 
+    i = randint(0,len(tempTeachers)-1)
+    teacher1 = tempTeachers[i]
+    tempTeachers.pop(i)
+    i = randint(0,len(tempTeachers)-1)
+    teacher2 = tempTeachers[i]
+    tempTeachers.pop(i)
+    i = randint(0,len(tempTeachers)-1)
+    teacher3 = tempTeachers[i]
+    tempTeachers.pop(i)
+    match randint(0,2):
+        case 0:
+            teacher1 = randQuote[1]
+            correct = 0
+        case 1:
+            teacher2 = randQuote[1]
+            correct = 1
+        case 2:
+            teacher3 = randQuote[1]
+            correct = 2
+    option1 = columns[0].button(teacher1,option1Varify)
+    option2 = columns[1].button(teacher2,option2Varify)
+    option3 = columns[2].button(teacher3,option3Varify)
     
 st.markdown("----", unsafe_allow_html=True)
