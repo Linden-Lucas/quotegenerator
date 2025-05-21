@@ -2,6 +2,7 @@ import streamlit as st
 from random import randint
 
 quotes = []
+quiz = False
 
 with open("quotes.txt", "r") as file:
     quotes = [line.strip().split("|") for line in file]
