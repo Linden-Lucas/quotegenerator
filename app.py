@@ -82,7 +82,7 @@ if not quiz:
     button_pressed = columns[1].button("Get new quote")
 if quiz:
     correct = -1
-    columns = st.columns((1,1,1,1,1))
+    columns = st.columns((2,1,1,1,2))
     st.markdown("", unsafe_allow_html=True)
     tempTeachers = list(teachers)
     i = randint(0,len(tempTeachers)-1)
@@ -110,8 +110,8 @@ if quiz:
 st.markdown("----", unsafe_allow_html=True)
 try:
     if st.session_state.correct:
-        st.title("Correct!")
+        st.markdown("<h2 style='text-align: center; color: green;'>Correct!</h2>", unsafe_allow_html=True)
     else:
-        st.title("Incorrect!")
+        st.markdown("<h2 style='text-align: center; color: red;'>Wrong!</h2>", unsafe_allow_html=True)
 except:
     st.write("")
