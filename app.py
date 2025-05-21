@@ -14,9 +14,9 @@ background-color: red;
 [data-testid="stHeader"] {{
 visibility: hidden;
 }}
-.st-emotion-cache-gi0tri {{display: none;}}
-._container_gzau3_1:{{display: none;}}
-._profileContainer_gzau3_53:{{display: none;}}
+[class*="st-emotion-cache"]{{display: none;}}
+[class*="_container_"]:{{display: none;}}
+[class*="profileContainer"]:{{display: none;}}
 </style>
 """
 
