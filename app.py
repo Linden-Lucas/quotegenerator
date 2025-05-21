@@ -3,6 +3,7 @@ from random import randint
 
 quotes = []
 
+st.title("WMG Quotes")
 
 with open("quotes.txt", "r") as file:
     quotes = [line.strip().split("|") for line in file]
@@ -37,8 +38,13 @@ st.session_state.quotes = tempQuotes
 quiz = st.checkbox("Quiz mode")
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
-if not quiz: st.markdown("<h5 style='text-align: center; color: grey;'>"+str(randQuote[1])+"</h5>", unsafe_allow_html=True)
-st.markdown("", unsafe_allow_html=True)
-columns = st.columns((2, 1, 2))
-button_pressed = columns[1].button("Get new quote")
+if not quiz: 
+    st.markdown("<h5 style='text-align: center; color: grey;'>"+str(randQuote[1])+"</h5>", unsafe_allow_html=True)
+    st.markdown("", unsafe_allow_html=True)
+    columns = st.columns((2, 1, 2))
+    button_pressed = columns[1].button("Get new quote")
+else:
+    columns = st.columns((1,1,1,1,1))
+    st.markdown("", unsafe_allow_html=True)
+    
 st.markdown("----", unsafe_allow_html=True)
