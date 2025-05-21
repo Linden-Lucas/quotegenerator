@@ -39,8 +39,11 @@ randIndex = randint(0,len(tempQuotes)-1)
 randQuote = tempQuotes[randIndex]
 tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
-st.session_state.numberCorrect = 0
-st.session_state.numberWrong = 0
+try:
+    print(st.session_state.numberCorrect, st.session_state.numberWrong)
+except:
+    st.session_state.numberCorrect = 0
+    st.session_state.numberWrong = 0
 
 def option1Varify():
     if correct == 0:
@@ -78,7 +81,6 @@ if not quiz:
     columns = st.columns((2, 1, 2))
     button_pressed = columns[1].button("Get new quote")
 if quiz:
-    st.write("hi")
     correct = -1
     columns = st.columns((1,1,1,1,1))
     st.markdown("", unsafe_allow_html=True)
