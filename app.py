@@ -3,10 +3,15 @@ from random import randint
 
 quotes = []
 
-st.title("WMG Quotes")
+st.set_page_config(page_title="WMG Quotes")
 
 with open("quotes.txt", "r") as file:
     quotes = [line.strip().split("|") for line in file]
+
+t = []
+for elem in quotes:
+    t.append(elem[1])
+teachers = set(t)
 
 page_bg_img = f"""
 <style>
@@ -46,5 +51,8 @@ if not quiz:
 else:
     columns = st.columns((1,1,1,1,1))
     st.markdown("", unsafe_allow_html=True)
+    tempTeachers = list(teachers)
+    #teacher1 = 
+    #option1 = 
     
 st.markdown("----", unsafe_allow_html=True)
