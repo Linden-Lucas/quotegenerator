@@ -104,9 +104,9 @@ if quiz:
         case 2:
             teacher3 = randQuote[1]
             correct = 2
-    option1 = columns[0].button(teacher1,on_click=option1Varify)
-    option2 = columns[1].button(teacher2,on_click=option2Varify)
-    option3 = columns[2].button(teacher3,on_click=option3Varify)
+    option1 = columns[0].button(teacher1,on_click=option1Varify,key=1)
+    option2 = columns[1].button(teacher2,on_click=option2Varify,key=2)
+    option3 = columns[2].button(teacher3,on_click=option3Varify,key=3)
 st.markdown("----", unsafe_allow_html=True)
 try:
     if st.session_state.correct:
