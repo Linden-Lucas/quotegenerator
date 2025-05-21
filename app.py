@@ -74,7 +74,8 @@ if not quiz:
     st.markdown("", unsafe_allow_html=True)
     columns = st.columns((2, 1, 2))
     button_pressed = columns[1].button("Get new quote")
-else:
+if quiz:
+    st.write("hi")
     correct = -1
     columns = st.columns((1,1,1,1,1))
     st.markdown("", unsafe_allow_html=True)
