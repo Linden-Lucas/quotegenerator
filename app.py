@@ -39,34 +39,37 @@ randIndex = randint(0,len(tempQuotes)-1)
 randQuote = tempQuotes[randIndex]
 tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
+st.session_state.numberCorrect = 0
+st.session_state.numberWrong = 0
 
 def option1Varify():
     if correct == 0:
         st.session_state.correct = True
+        st.session_state.numberCorrect += 1
         return
     st.session_state.correct = False
+    st.session_state.numberWrong += 1
 
 def option2Varify():
     if correct == 1:
         st.session_state.correct = True
+        st.session_state.numberCorrect += 1
         return
     st.session_state.correct = False
+    st.session_state.numberWrong += 1
 
 def option3Varify():
     if correct == 2:
         st.session_state.correct = True
+        st.session_state.numberCorrect += 1
         return
     st.session_state.correct = False
+    st.session_state.numberWrong += 1
 
-topBar = st.columns((1,1))
+topBar = st.columns((1,1,1))
 quiz = topBar[0].checkbox("Quizz mode")
-try:
-    if st.session_state.correct:
-        st.write("Correct!")
-    else:
-        st.write("Incorrect!")
-except:
-    st.write("")
+topBar[1].write("Correct: "+str(st.session_state.numberCorrect))
+topBar[2].write("Wrong: "+str(st.session_state.numberWrong))
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
@@ -102,5 +105,11 @@ if quiz:
     option1 = columns[0].button(teacher1,on_click=option1Varify)
     option2 = columns[1].button(teacher2,on_click=option2Varify)
     option3 = columns[2].button(teacher3,on_click=option3Varify)
-    
 st.markdown("----", unsafe_allow_html=True)
+try:
+    if st.session_state.correct:
+        st.title("Correct!")
+    else:
+        st.title("Incorrect!")
+except:
+    st.write("")
