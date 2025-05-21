@@ -41,7 +41,6 @@ tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
 
 def option1Varify():
-    st.write("djgdfgjdjghdkjgh")
     if correct == 0:
         st.session_state.correct = True
         return
@@ -67,7 +66,7 @@ try:
     else:
         st.write("Incorrect!")
 except:
-    st.write("UYGSUYGUHGSIUGISUEGIHSRIGHSIUHGISHFGIUHSFGIHDSFIUGISUHGIUSHEGIUSHRGHSRGIHU")
+    st.write("")
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
@@ -100,8 +99,8 @@ if quiz:
         case 2:
             teacher3 = randQuote[1]
             correct = 2
-    option1 = columns[0].button(teacher1,option1Varify)
-    option2 = columns[1].button(teacher2,option2Varify)
-    option3 = columns[2].button(teacher3,option3Varify)
+    option1 = columns[0].button(teacher1,on_click=option1Varify)
+    option2 = columns[1].button(teacher2,on_click=option2Varify)
+    option3 = columns[2].button(teacher3,on_click=option3Varify)
     
 st.markdown("----", unsafe_allow_html=True)
