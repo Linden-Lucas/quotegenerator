@@ -41,6 +41,7 @@ tempQuotes.pop(randIndex)
 st.session_state.quotes = tempQuotes
 
 def option1Varify():
+    st.write("djgdfgjdjghdkjgh")
     if correct == 0:
         st.session_state.correct = True
         return
