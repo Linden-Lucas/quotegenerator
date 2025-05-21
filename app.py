@@ -14,7 +14,6 @@ background-color: red;
 [data-testid="stHeader"] {{
 visibility: hidden;
 }}
-[class*="st-emotion-cache"]{{display: none;}}
 
 </style>
 """
