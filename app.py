@@ -58,7 +58,7 @@ def option3Varify():
         return
     st.session_state.correct = False
 
-topBar = st.columns(1,1)
+topBar = st.columns((1,1))
 quiz = topBar[0].checkbox("Quizz mode")
 try:
     if st.session_state.correct:
