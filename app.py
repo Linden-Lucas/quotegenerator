@@ -71,8 +71,9 @@ def option3Varify():
 
 topBar = st.columns((1,1,1))
 quiz = topBar[0].checkbox("Quizz mode")
-topBar[1].write("Correct: "+str(st.session_state.numberCorrect))
-topBar[2].write("Wrong: "+str(st.session_state.numberWrong))
+if quiz:
+    topBar[1].write("Correct: "+str(st.session_state.numberCorrect))
+    topBar[2].write("Wrong: "+str(st.session_state.numberWrong))
 st.markdown("----", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: grey;'>"+str(randQuote[0])+"</h1>", unsafe_allow_html=True)
 if not quiz: 
@@ -108,10 +109,11 @@ if quiz:
     option2 = columns[2].button(teacher2,on_click=option2Varify,key=2)
     option3 = columns[3].button(teacher3,on_click=option3Varify,key=3)
 st.markdown("----", unsafe_allow_html=True)
-try:
-    if st.session_state.correct:
-        st.markdown("<h2 style='text-align: center; color: green;'>Correct!</h2>", unsafe_allow_html=True)
-    else:
-        st.markdown("<h2 style='text-align: center; color: red;'>Wrong!</h2>", unsafe_allow_html=True)
-except:
-    st.write("")
+if quiz:
+    try:
+        if st.session_state.correct:
+            st.markdown("<h2 style='text-align: center; color: green;'>Correct!</h2>", unsafe_allow_html=True)
+        else:
+            st.markdown("<h2 style='text-align: center; color: red;'>Wrong!</h2>", unsafe_allow_html=True)
+    except:
+        st.write("")
